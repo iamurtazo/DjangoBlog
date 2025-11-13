@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # local apps
     'blog',
-
+    'users',
     # third-party apps
 
 ]
