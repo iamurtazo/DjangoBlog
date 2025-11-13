@@ -1,7 +1,153 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <h1 style="color: red">
-        About - Blog
-    </h1>
+    <!-- About Header -->
+    <section class="content-section mb-5">
+        <h1 class="mb-4">
+            <span style="color: #2563eb;">About</span> Django Blog
+        </h1>
+        <p class="lead text-secondary">
+            Crafted with passion, built with Django. A modern blogging platform for sharing knowledge and ideas.
+        </p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="content-section mb-5">
+        <h2 class="mb-4">
+            <span style="font-size: 1.5rem;">🎯</span> Our Mission
+        </h2>
+        <p class="text-secondary mb-4">
+            Django Blog is dedicated to providing high-quality, accessible content for developers, technologists, 
+            and curious minds. We believe in the power of knowledge sharing and community collaboration.
+        </p>
+        <p class="text-secondary">
+            Our platform combines modern web technologies with thoughtful design to create an engaging reading 
+            experience. Whether you're learning new skills or sharing your expertise, Django Blog is the perfect place.
+        </p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="mb-5">
+        <h2 class="mb-4">
+            <span style="font-size: 1.5rem;">✨</span> Why Choose Us
+        </h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="content-section h-100">
+                    <h4 class="mb-3">
+                        <span style="font-size: 1.25rem;">🚀</span> Modern Technology
+                    </h4>
+                    <p class="text-secondary">
+                        Built with Django and Bootstrap, leveraging the latest web technologies to deliver 
+                        fast, secure, and scalable blogging experience.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="content-section h-100">
+                    <h4 class="mb-3">
+                        <span style="font-size: 1.25rem;">🎨</span> Beautiful Design
+                    </h4>
+                    <p class="text-secondary">
+                        A clean, professional interface that puts your content first. Carefully designed for 
+                        readability and user engagement across all devices.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="content-section h-100">
+                    <h4 class="mb-3">
+                        <span style="font-size: 1.25rem;">🔒</span> Secure & Reliable
+                    </h4>
+                    <p class="text-secondary">
+                        Built-in security features and best practices ensure your content and data are 
+                        protected. Reliable hosting and consistent uptime.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="content-section h-100">
+                    <h4 class="mb-3">
+                        <span style="font-size: 1.25rem;">📱</span> Responsive Layout
+                    </h4>
+                    <p class="text-secondary">
+                        Optimized for all screen sizes. Your content looks amazing on desktop, tablet, 
+                        and mobile devices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="mb-5">
+        <h2 class="mb-4">
+            <span style="font-size: 1.5rem;">👥</span> Meet the Team
+        </h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="content-section text-center">
+                    <img src="https://via.placeholder.com/125" alt="Team Member" class="account-img mb-3">
+                    <h5 class="mb-1">John Developer</h5>
+                    <p class="text-secondary small mb-3">Full Stack Developer</p>
+                    <p class="text-secondary small">
+                        Passionate about Django and modern web development. Coffee enthusiast.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="content-section text-center">
+                    <img src="https://via.placeholder.com/125" alt="Team Member" class="account-img mb-3">
+                    <h5 class="mb-1">Jane Designer</h5>
+                    <p class="text-secondary small mb-3">UI/UX Designer</p>
+                    <p class="text-secondary small">
+                        Creating beautiful and functional designs. Music lover and design advocate.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="content-section text-center">
+                    <img src="https://via.placeholder.com/125" alt="Team Member" class="account-img mb-3">
+                    <h5 class="mb-1">Mike Content</h5>
+                    <p class="text-secondary small mb-3">Content Manager</p>
+                    <p class="text-secondary small">
+                        Crafting compelling stories and articles. Tech writer and community builder.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section">
+        <h2 class="mb-4">
+            <span style="font-size: 1.5rem;">📧</span> Get in Touch
+        </h2>
+        <p class="text-secondary mb-4">
+            Have questions, suggestions, or collaboration ideas? We'd love to hear from you!
+        </p>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <label for="name" class="font-weight-500 mb-2">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your name">
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <label for="email" class="font-weight-500 mb-2">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your email">
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="form-group">
+                    <label for="message" class="font-weight-500 mb-2">Message</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Your message"></textarea>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </div>
+        </div>
+    </section>
 {% endblock %}

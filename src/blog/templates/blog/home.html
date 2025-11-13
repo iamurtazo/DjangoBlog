@@ -1,5 +1,125 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <h1 style="color:blue;">Home - Blog</h1>
+    <div class="mb-5">
+        <div class="content-section">
+            <h1 class="mb-4">
+                <span style="color: #2563eb;">Welcome</span> to Django Blog
+            </h1>
+            <p class="lead text-secondary">
+                Discover insightful articles, tutorials, and stories. A modern platform for sharing knowledge and ideas.
+            </p>
+            <hr class="my-4">
+            <p class="text-secondary">
+                Explore our latest posts and stay updated with the most recent content. Whether you're interested in web development, 
+                technology trends, or personal insights, you'll find something valuable here.
+            </p>
+        </div>
+    </div>
+
+    <!-- Featured Posts Section -->
+    <section class="mb-5">
+        <h2 class="mb-4">
+            <span style="font-size: 1.5rem;">📰</span> Latest Posts
+        </h2>
+        
+        <!-- Sample Article Card -->
+        <article class="content-section mb-4">
+            <div class="d-flex">
+                <div class="mr-4">
+                    <img src="https://via.placeholder.com/65" alt="Author" class="article-img">
+                </div>
+                <div class="flex-grow-1">
+                    <h3 class="article-title mb-2">
+                        <a href="#" class="text-decoration-none">Getting Started with Django</a>
+                    </h3>
+                    <div class="article-metadata">
+                        <small>
+                            <strong>Posted by:</strong> 
+                            <a href="#">John Doe</a> | 
+                            <strong>Date:</strong> Nov 13, 2025
+                        </small>
+                    </div>
+                    <p class="article-content text-secondary">
+                        Learn the fundamentals of Django and build powerful web applications with Python. 
+                        This comprehensive guide covers models, views, templates, and more...
+                    </p>
+                    <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sample Article Card 2 -->
+        <article class="content-section mb-4">
+            <div class="d-flex">
+                <div class="mr-4">
+                    <img src="https://via.placeholder.com/65" alt="Author" class="article-img">
+                </div>
+                <div class="flex-grow-1">
+                    <h3 class="article-title mb-2">
+                        <a href="#" class="text-decoration-none">Best Practices in Web Development</a>
+                    </h3>
+                    <div class="article-metadata">
+                        <small>
+                            <strong>Posted by:</strong> 
+                            <a href="#">Jane Smith</a> | 
+                            <strong>Date:</strong> Nov 10, 2025
+                        </small>
+                    </div>
+                    <p class="article-content text-secondary">
+                        Discover industry best practices for clean code, security, performance optimization, 
+                        and scalability. Learn from experienced developers and improve your craft...
+                    </p>
+                    <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sample Article Card 3 -->
+        <article class="content-section">
+            <div class="d-flex">
+                <div class="mr-4">
+                    <img src="https://via.placeholder.com/65" alt="Author" class="article-img">
+                </div>
+                <div class="flex-grow-1">
+                    <h3 class="article-title mb-2">
+                        <a href="#" class="text-decoration-none">Advanced JavaScript Patterns</a>
+                    </h3>
+                    <div class="article-metadata">
+                        <small>
+                            <strong>Posted by:</strong> 
+                            <a href="#">Mike Johnson</a> | 
+                            <strong>Date:</strong> Nov 8, 2025
+                        </small>
+                    </div>
+                    <p class="article-content text-secondary">
+                        Master advanced JavaScript concepts including closures, prototypes, async/await, 
+                        and functional programming patterns to write more efficient code...
+                    </p>
+                    <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Pagination (if needed) -->
+    <nav aria-label="Page navigation" class="mb-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
 {% endblock %}
