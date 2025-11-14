@@ -1,5 +1,6 @@
 src/blog/templates/blog/home_f.html
 src/blog/templates/blog/about_f.html
+src/profile_images
 
 # Django-specific files
 *.log

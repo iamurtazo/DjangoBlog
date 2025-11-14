@@ -2,6 +2,59 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h1>Hi {{ user.username }}</h1>
-{% endblock %}
+    <section class="content-section">
+        <div class="d-flex flex-column flex-md-row align-items-md-start">
+            <div class="mb-4 mb-md-0 mr-md-4">
+                {% if user.profile.image %}
+                    <img class="rounded-circle" src="{{ user.profile.image.url }}" alt="{{ user.username }}" style="width: 120px; height: 120px; object-fit: cover;">
+                {% else %}
+                    <img class="rounded-circle" src="/media/profile_images/default.jpg" alt="Default profile picture" style="width: 120px; height: 120px; object-fit: cover;">
+                {% endif %}
+            </div>
+            <div>
+                <h1 class="h3 mb-1">{% if user.first_name or user.last_name %}{{ user.first_name }} {{ user.last_name }}{% else %}{{ user.username }}{% endif %}</h1>
+                <p class="text-muted mb-2">@{{ user.username }}</p>
+                <p class="mb-2">{{ user.email }}</p>
+                <small class="text-muted">Member since {{ user.date_joined|date:"F d, Y" }}</small>
+                {% if user.profile.bio %}
+                    <p class="text-secondary mt-3" style="max-width: 48rem;">{{ user.profile.bio }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
 
+    <section class="content-section mt-4">
+        <h2 class="h5 text-uppercase text-muted mb-4" style="letter-spacing: 0.08em;">Profile Details</h2>
+        <dl class="row mb-0">
+            <dt class="col-sm-4 text-muted">Full Name</dt>
+            <dd class="col-sm-8 mb-3">
+                {% if user.first_name or user.last_name %}
+                    {{ user.first_name }} {{ user.last_name }}
+                {% else %}
+                    <span class="text-muted">Not provided</span>
+                {% endif %}
+            </dd>
+
+            <dt class="col-sm-4 text-muted">Email</dt>
+            <dd class="col-sm-8 mb-3">{{ user.email }}</dd>
+
+            <dt class="col-sm-4 text-muted">Location</dt>
+            <dd class="col-sm-8 mb-3">
+                {% if user.profile.location %}
+                    {{ user.profile.location }}
+                {% else %}
+                    <span class="text-muted">Not specified</span>
+                {% endif %}
+            </dd>
+
+            <dt class="col-sm-4 text-muted">Birth Date</dt>
+            <dd class="col-sm-8 mb-3">
+                {% if user.profile.birth_date %}
+                    {{ user.profile.birth_date|date:"F d, Y" }}
+                {% else %}
+                    <span class="text-muted">Not provided</span>
+                {% endif %}
+            </dd>
+        </dl>
+    </section>
+{% endblock %}
