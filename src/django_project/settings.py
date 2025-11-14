@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'blog',
     'users',
     # third-party apps
+    'django.contrib.humanize',
+    'crispy_forms',
+    'crispy_bootstrap5',
+
+
 
 ]
 
@@ -128,3 +133,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
