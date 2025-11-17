@@ -15,15 +15,18 @@ from pathlib import Path
 from dotenv import load_dotenv
 import json
 
-with open ('config.json') as config_file:
-    config = json.load(config_file)
-
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent               
 
+config_path = BASE_DIR.parent / 'config.json'
 
+if config_path.exists():
+    with open(config_path) as config_file:
+        config = json.load(config_file)
+else:
+    raise FileNotFoundError(f"config.json not found at {config_path}")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -38,6 +41,7 @@ ALLOWED_HOSTS = [
     'www.murtazo.org',
     '172.235.192.150',
     'localhost',
+    '127.0.0.1',
 ]
 
 
@@ -54,6 +58,7 @@ INSTALLED_APPS = [
     # local apps
     'blog',
     'users',
+    
     # third-party apps
     'django.contrib.humanize',
     'crispy_forms',
