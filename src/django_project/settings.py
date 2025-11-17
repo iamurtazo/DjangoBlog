@@ -18,7 +18,6 @@ import json
 with open ('config.json') as config_file:
     config = json.load(config_file)
 
-
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,7 +33,12 @@ SECRET_KEY = config.get("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'murtazo.org',
+    'www.murtazo.org',
+    '172.235.192.150',
+    'localhost',
+]
 
 
 # Application definition
