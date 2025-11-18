@@ -9,6 +9,7 @@ from django.views.generic import (
 )   
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from comments.forms import CommentForm
 
 
 def home(request):
@@ -36,6 +37,11 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 3
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['comment_form'] = CommentForm()
+        return context
 
 
 class UserPostListView(ListView):
