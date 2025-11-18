@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import json
 
-load_dotenv()
+# load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent               
@@ -33,7 +33,7 @@ else:
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config.get("DJANGO_SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in production!ff
 DEBUG = True
 
 ALLOWED_HOSTS = [
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     # local apps
     'blog',
     'users',
+    'comments',
     
     # third-party apps
     'django.contrib.humanize',
