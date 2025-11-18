@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% load humanize %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <h1>Blog Home</h1>
@@ -9,11 +10,34 @@
     <div class="media-body">
         <div class="article-metadata">
             <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-            <!-- <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small> -->
             <small class="text-muted">{{ post.date_posted|naturaltime }} ago</small>
         </div>
         <h2><a class="article-title" href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h2>
         <p class="article-content">{{ post.content|truncatewords:20 }}</p>
+        
+        <!-- Comments Section -->
+        <div class="comments-section mt-3">
+            <small class="text-muted">
+                {{ post.comments.count }} comment{{ post.comments.count|pluralize }}
+            </small>
+            
+            <!-- Add Comment Button and Form -->
+            {% if user.is_authenticated %}
+            <button class="btn btn-sm btn-outline-primary ml-2" type="button" data-toggle="collapse" data-target="#commentForm{{ post.id }}" aria-expanded="false" aria-controls="commentForm{{ post.id }}">
+                Add Comment
+            </button>
+            
+            <div class="collapse mt-2" id="commentForm{{ post.id }}">
+                <form method="POST" action="{% url 'add-comment' post.id %}">
+                    {% csrf_token %}
+                    {{ comment_form|crispy }}
+                    <button type="submit" class="btn btn-primary btn-sm">Submit Comment</button>
+                </form>
+            </div>
+            {% else %}
+            <a href="{% url 'login' %}" class="btn btn-sm btn-outline-primary ml-2">Login to Comment</a>
+            {% endif %}
+        </div>
     </div>
 </article>
 {% endfor %}
